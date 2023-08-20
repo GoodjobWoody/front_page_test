@@ -1,6 +1,9 @@
 function injectModal() {
   // Check if modal already exists
-  if (document.getElementById("resumeModal")) return;
+  if (document.getElementById("resumeModal")) {
+    document.getElementById("resumeModal").style.display = "block";
+    return;
+  }
 
   // Create modal
   const modal = document.createElement("div");
@@ -31,7 +34,7 @@ function injectModal() {
       z-index: 10000;
   }
   #resumeModal .modal-content {
-      width: 90%;  /* Adjust this value as needed */
+      width: 93%;  /* Adjust this value as needed */
       height: 90%; /* Adjust this value as needed */
       margin: auto;
       margin-top: 15px;
@@ -43,7 +46,8 @@ function injectModal() {
       width: 100%;
       height: 100%;
       border: none;
-      overflow: auto; /* Allows the iframe content to scroll if needed */
+      overflow-x: hidden; /* Hides horizontal scrollbar */
+      overflow-y: auto; /* Hides vertical scrollbar */
   }
   .close {
     position: absolute;
@@ -53,9 +57,13 @@ function injectModal() {
     background-color: #fff; /* White background for visibility */
     color: #000; /* Black text for visibility */
     padding: 5px; /* Some padding for better appearance */
-    border-radius: 50%; /* Optional: to make it circular */
+    border-radius: 25%; /* Optional: to make it circular */
     z-index: 10001; /* Ensure it's above other elements */
 }
+
+    #resumeModal .modal-content, #resumeModal iframe {
+        box-sizing: border-box; /* Include padding and borders in total width/height */
+    }
 `;
   document.head.appendChild(style);
 

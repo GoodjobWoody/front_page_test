@@ -1,6 +1,21 @@
 body {
   font-family: Arial, sans-serif;
   width: 300px;
+  padding: 15px;
+}
+
+#reviseResumeBtn {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#reviseResumeBtn:hover {
+  background-color: #0056b3;
 }
 
 .modal {
@@ -24,6 +39,7 @@ body {
   height: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: auto;
+  margin: 20px;
 }
 
 iframe {
@@ -37,4 +53,15 @@ iframe {
   right: 10px;
   top: 5px;
   cursor: pointer;
+  background-color: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px 8px;
+  font-size: 16px;
+  line-height: 1;
+  transition: background-color 0.3s;
+}
+
+.close:hover {
+  background-color: #cc0000;
 }
