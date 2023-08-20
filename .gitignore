@@ -1,0 +1,13 @@
+# created by virtualenv automatically
+.env
+lib
+firebase
+bin
+Resume_Loren_Wang_CA.pdf
+job_description.txt
+job_description_2.txt
+job_description_3.txt
+keywords.json
+open_ai_cert.cer
+pyvenv.cfg
+
