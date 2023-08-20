@@ -61,7 +61,7 @@ function injectModal() {
     z-index: 10001; /* Ensure it's above other elements */
 }
 
-    #resumeModal .modal-content, #resumeModal iframe {
+    #resumeModal *, #resumeModal *::before, #resumeModal *::after {
         box-sizing: border-box; /* Include padding and borders in total width/height */
     }
 `;

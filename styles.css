@@ -7,6 +7,13 @@ body {
   position: relative;
 }
 
+body,
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Include padding and borders in total width/height */
+}
+
 .container {
   display: flex;
   justify-content: center;
