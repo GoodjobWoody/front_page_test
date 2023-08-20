@@ -1,0 +1,76 @@
+{
+  "name": "Loren Wang",
+  "contact": {
+    "phone": "123-345-6789",
+    "email": "heyhahaha@gmail.com",
+    "location": "Vancouver, Canada",
+    "linkedin": "LinkedIn"
+  },
+  "highlights": [
+    "Over 6+ years of intensive full stack software development and cloud development experience",
+    "Strong academic background with BSc. in computer science and MSc. ongoing",
+    "Programming Languages: Java, Python, JavaScript, Go, HTML, CSS, PHP, C/C++",
+    "Frameworks: Spring, Spring Boot, React, Node.js, Express.js",
+    "Database & Tools: MySQL, Postgres SQL, DynamoDB, MongoDB, Git, AWS, CI/CD, Jenkins, Docker, K8S, Jira, Travis",
+    "Knowledge: RESTful APIs, Data Structure, Algorithm, Agile, Test-Driven Dev, Linux/Unix"
+  ],
+  "workExperience": [
+    {
+      "company": "Amazon",
+      "position": "Software Engineer",
+      "location": "Vancouver, Canada",
+      "startDate": "Jan 2023",
+      "endDate": "Present",
+      "responsibilities": [
+        "Developed and optimized RESTful APIs for Amazon Fulfillment Technologies' order processing and inventory management systems, enhancing performance and reliability of critical backend services.",
+        "Contributed to the design and implementation of a microservices architecture, using technologies such as Docker and Kubernetes, improving system scalability and maintainability within the fulfillment domain.",
+        "Worked on data processing pipelines and distributed systems using Apache Kafka and AWS Lambda, ensuring efficient handling of large-scale data in real-time for analytics and reporting in the warehouse management system.",
+        "Collaborated with cross-functional teams to identify and address performance bottlenecks in database operations and API calls, utilizing tools such as profiling, tracing, and monitoring with Amazon CloudWatch and AWS X-Ray.",
+        "Adapted to a fast-paced work environment and high expectations, building resilience and improving time management and prioritization skills."
+      ]
+    },
+    {
+      "company": "Teradata",
+      "position": "Software Engineer (Remote)",
+      "location": "San Diego, US",
+      "startDate": "Sep 2021",
+      "endDate": "Jan 2023",
+      "responsibilities": [
+        "Developed APIs with AWS API Gateway, Step Function, Lambda Function, and Python, to query and clear terminated nodes among 5000+ VM instances, from Centrify portal and major cloud platforms like AWS, Azure, and GCP.",
+        "Implemented and refactored unit tests for 20+ lambada functions using Pytest, Coverage, with over 80% coverage.",
+        "Integrated static code quality investigation and test coverage visualization using Sonarqube into Jenkins pipeline.",
+        "Implemented automations with Terraform to provision and manage Cloud services like EC2, S3, and DynamoDB."
+      ]
+    },
+    {
+      "company": "Deloitte",
+      "position": "Full Stack Software Engineer",
+      "location": "Toronto, Canada",
+      "startDate": "Jan 2018",
+      "endDate": "Sep 2021",
+      "responsibilities": [
+        "Worked on both web development and operation projects for 1000+ healthcare industry clients.",
+        "Designed and implemented an internal web tool to streamline the extraction of server logs from 2000+ remote nodes, which reduced the operation timeline from 3 days to 1 hour.",
+        "Developed front-end features and back-end services using React, Node.js, Java Spring Boot, Shell script, Jenkins.",
+        "Investigated app operation bottlenecks regarding Cloud Server (Azure) and Database (SQL Server)."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "university": "Georgia Institute of Technology",
+      "location": "Atlanta, US",
+      "degree": "MSc., Computer Science",
+      "startDate": "2022",
+      "endDate": "2024"
+    },
+    {
+      "university": "University of Alberta",
+      "location": "Edmonton, Canada",
+      "degree": "BSc., Computer Science",
+      "startDate": "2012",
+      "endDate": "2017"
+    }
+  ],
+  "referencesAvailable": true
+}
