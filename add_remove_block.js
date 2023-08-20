@@ -35,3 +35,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Add a new project block
+document.querySelector(".add-project").addEventListener("click", function () {
+  const projectTemplate = document
+    .querySelector(".project-template")
+    .cloneNode(true);
+  document
+    .getElementById("template-project-experience")
+    .appendChild(projectTemplate);
+});
+
+// Remove the last project block
+document
+  .querySelector(".remove-project")
+  .addEventListener("click", function () {
+    const allProjects = document.querySelectorAll(".project-template");
+    if (allProjects.length > 1) {
+      // Ensure at least one block remains
+      allProjects[allProjects.length - 1].remove();
+    }
+  });
+
+// Add a new education block
+document.querySelector(".add-education").addEventListener("click", function () {
+  const educationTemplate = document
+    .querySelector(".education-template")
+    .cloneNode(true);
+  document.getElementById("template-education").appendChild(educationTemplate);
+});
+
+// Remove the last education block
+document
+  .querySelector(".remove-education")
+  .addEventListener("click", function () {
+    const allEducations = document.querySelectorAll(".education-template");
+    if (allEducations.length > 1) {
+      // Ensure at least one block remains
+      allEducations[allEducations.length - 1].remove();
+    }
+  });

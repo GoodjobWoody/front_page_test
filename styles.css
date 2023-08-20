@@ -145,7 +145,11 @@ li {
 }
 
 .add-job,
-.remove-job {
+.remove-job,
+.add-project,
+.remove-project,
+.add-education,
+.remove-education {
   width: 20px;
   height: 20px;
   line-height: 20px;
@@ -180,12 +184,16 @@ li {
 
 li {
   position: relative;
-  margin-left: 30px;
-  padding-right: 30px;
+  margin-left: 10px;
+  padding-right: 20px;
 }
 
 /* When hovering over a specific button, make only that button visible */
 .add-job:hover,
-.remove-job:hover {
+.remove-job:hover,
+.add-project:hover,
+.remove-project:hover,
+.add-education:hover,
+.remove-education:hover {
   opacity: 1;
 }
