@@ -149,7 +149,9 @@ li {
 .add-project,
 .remove-project,
 .add-education,
-.remove-education {
+.remove-education,
+.add-highlight,
+.remove-highlight {
   width: 20px;
   height: 20px;
   line-height: 20px;
@@ -164,7 +166,8 @@ li {
 
 .add-job,
 .add-project,
-.add-education {
+.add-education,
+.add-highlight {
   background-color: #a8e6cf;
   color: #fff;
   border: none;
@@ -176,7 +179,8 @@ li {
 
 .remove-job,
 .remove-project,
-.remove-education {
+.remove-education,
+.remove-highlight {
   background-color: #ff8a80;
   color: #fff;
   border: none;
@@ -198,6 +202,8 @@ li {
 .add-project:hover,
 .remove-project:hover,
 .add-education:hover,
-.remove-education:hover {
+.remove-education:hover,
+.add-highlight:hover,
+.remove-highlight:hover {
   opacity: 1;
 }

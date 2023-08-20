@@ -6,13 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (
       event.target.classList.contains("add-job") ||
       event.target.classList.contains("add-project") ||
-      event.target.classList.contains("add-education")
+      event.target.classList.contains("add-education") ||
+      event.target.classList.contains("add-highlight")
     ) {
       const sectionClass = event.target.classList.contains("add-job")
         ? ".job-template"
         : event.target.classList.contains("add-project")
         ? ".project-template"
-        : ".education-template";
+        : event.target.classList.contains("add-education")
+        ? ".education-template"
+        : "li"; // For highlights
 
       // If the closest parent is 'li', clone the li
       if (event.target.closest("li")) {
@@ -31,18 +34,24 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (
       event.target.classList.contains("remove-job") ||
       event.target.classList.contains("remove-project") ||
-      event.target.classList.contains("remove-education")
+      event.target.classList.contains("remove-education") ||
+      event.target.classList.contains("remove-highlight")
     ) {
       const sectionClass = event.target.classList.contains("remove-job")
         ? ".job-template"
         : event.target.classList.contains("remove-project")
         ? ".project-template"
-        : ".education-template";
+        : event.target.classList.contains("remove-education")
+        ? ".education-template"
+        : "li"; // For highlights
 
       // If the "-" button's direct parent is an 'li', remove the 'li'
       if (event.target.parentElement.tagName === "LI") {
         const li = event.target.parentElement;
-        li.parentNode.removeChild(li);
+        if (li.parentNode.querySelectorAll("li").length > 1) {
+          // Ensure at least one block remains for highlights
+          li.parentNode.removeChild(li);
+        }
       }
       // If the "-" button is inside a section (job, project, education), remove the entire block
       else if (event.target.closest(sectionClass)) {
