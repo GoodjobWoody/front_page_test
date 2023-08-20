@@ -113,176 +113,37 @@
         <!-- Add more sections (e.g., Work Experience, Education) with placeholders similarly -->
       </div>
 
+      <!-- Right Side: Highlighted Resume -->
       <div class="highlighted-resume">
         <div id="resume">
           <section id="personal-info">
-            <span id="name">Loren Wang</span> |
-            <span><strong>Phone:</strong> 123456789</span> |
-            <span
-              ><strong>Email:</strong>
-              <a href="mailto:heyloren2020@gmail.com"
-                >heyloren2020@gmail.com</a
-              ></span
-            >
+            <span id="name"></span> |
+            <span><strong>Phone:</strong> <span id="phone"></span></span> |
+            <span><strong>Email:</strong> <a href="#" id="email"></a></span> |
+            <span><strong>Location:</strong> <span id="location"></span></span>
             |
-            <span><strong>Location:</strong> Vancouver, Canada</span> |
-            <span><strong>LinkedIn:</strong> <a href="#">LinkedIn</a></span>
+            <span
+              ><strong>LinkedIn:</strong> <a href="#" id="linkedin"></a
+            ></span>
           </section>
 
           <section id="highlights">
             <h2>Highlights</h2>
-            <ul>
-              <li>
-                Over 6+ years of intensive full stack software development and
-                cloud development experience
-              </li>
-              <li>
-                Strong academic background with BSc. in computer science and
-                MSc. ongoing
-              </li>
-              <li>
-                Programming Languages: Java, Python, JavaScript, Go, HTML, CSS,
-                PHP, C/C++
-              </li>
-              <li>
-                Frameworks: Spring, Spring Boot, React, Node.js, Express.js
-              </li>
-              <li>
-                Database & Tools: MySQL, Postgres SQL, DynamoDB, MongoDB, Git,
-                AWS, CI/CD, Jenkins, Docker, K8S, Jira, Travis
-              </li>
-              <li>
-                Knowledge: RESTful APIs, Data Structure, Algorithm, Agile,
-                Test-Driven Dev, Linux/Unix
-              </li>
-            </ul>
+            <ul></ul>
           </section>
 
           <section id="professional-experience">
             <h2>Professional Experience</h2>
-
-            <!-- Amazon -->
-            <div class="job">
-              <h3>Software Engineer at Amazon</h3>
-              <p>
-                <strong>Location:</strong> Vancouver, Canada |
-                <strong>Duration:</strong> Jan 2023 - Present
-              </p>
-              <ul class="achievements">
-                <li>
-                  Developed and optimized RESTful APIs for Amazon Fulfillment
-                  Technologies' order processing and inventory management
-                  systems, enhancing performance and reliability of critical
-                  backend services.
-                </li>
-                <li>
-                  Contributed to the design and implementation of a
-                  microservices architecture, using technologies such as Docker
-                  and Kubernetes, improving system scalability and
-                  maintainability within the fulfillment domain.
-                </li>
-                <li>
-                  Worked on data processing pipelines and distributed systems
-                  using Apache Kafka and AWS Lambda, ensuring efficient handling
-                  of large-scale data in real-time for analytics and reporting
-                  in the warehouse management system.
-                </li>
-                <li>
-                  Collaborated with cross-functional teams to identify and
-                  address performance bottlenecks in database operations and API
-                  calls, utilizing tools such as profiling, tracing, and
-                  monitoring with Amazon CloudWatch and AWS X-Ray.
-                </li>
-                <li>
-                  Adapted to a fast-paced work environment and high
-                  expectations, building resilience and improving time
-                  management and prioritization skills.
-                </li>
-              </ul>
-            </div>
-
-            <!-- Teradata -->
-            <div class="job">
-              <h3>Software Engineer (Remote) at Teradata</h3>
-              <p>
-                <strong>Location:</strong> San Diego, US |
-                <strong>Duration:</strong> Sep 2021 - Jan 2023
-              </p>
-              <ul class="achievements">
-                <li>
-                  Developed APIs with AWS API Gateway, Step Function, Lambda
-                  Function, and Python, to query and clear terminated nodes
-                  among 5000+ VM instances, from Centrify portal and major cloud
-                  platforms like AWS, Azure, and GCP.
-                </li>
-                <li>
-                  Implemented and refactored unit tests for 20+ lambada
-                  functions using Pytest, Coverage, with over 80% coverage.
-                </li>
-                <li>
-                  Integrated static code quality investigation and test coverage
-                  visualization using Sonarqube into Jenkins pipeline.
-                </li>
-                <li>
-                  Implemented automations with Terraform to provision and manage
-                  Cloud services like EC2, S3, and DynamoDB.
-                </li>
-              </ul>
-            </div>
-
-            <!-- Deloitte -->
-            <div class="job">
-              <h3>Full Stack Software Engineer at Deloitte</h3>
-              <p>
-                <strong>Location:</strong> Toronto, Canada |
-                <strong>Duration:</strong> Jan 2018 - Sep 2021
-              </p>
-              <ul class="achievements">
-                <li>
-                  Worked on both web development and operation projects for
-                  1000+ healthcare industry clients.
-                </li>
-                <li>
-                  Designed and implemented an internal web tool to streamline
-                  the extraction of server logs from 2000+ remote nodes, which
-                  reduced the operation timeline from 3 days to 1 hour.
-                </li>
-                <li>
-                  Developed front-end features and back-end services using
-                  React, Node.js, Java Spring Boot, Shell script, Jenkins.
-                </li>
-                <li>
-                  Investigated app operation bottlenecks regarding Cloud Server
-                  (Azure) and Database (SQL Server).
-                </li>
-              </ul>
-            </div>
+            <!-- Job experiences will be populated here -->
           </section>
 
           <section id="education">
             <h2>Education</h2>
-
-            <!-- Georgia Institute of Technology -->
-            <div class="education-entry">
-              <h3>MSc., Computer Science at Georgia Institute of Technology</h3>
-              <p>
-                <strong>Location:</strong> Atlanta, US |
-                <strong>Duration:</strong> 2022 - 2024
-              </p>
-            </div>
-
-            <!-- University of Alberta -->
-            <div class="education-entry">
-              <h3>BSc., Computer Science at University of Alberta</h3>
-              <p>
-                <strong>Location:</strong> Edmonton, Canada |
-                <strong>Duration:</strong> 2012 - 2017
-              </p>
-            </div>
+            <!-- Education details will be populated here -->
           </section>
 
           <section id="reference">
-            <h2>Reference available upon request.</h2>
+            <h2></h2>
           </section>
         </div>
       </div>
@@ -294,5 +155,6 @@
     <script src="script.js"></script>
     <script src="highlight.js"></script>
     <script src="add_remove_block.js"></script>
+    <script src="populateResume.js"></script>
   </body>
 </html>
