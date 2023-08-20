@@ -162,7 +162,9 @@ li {
   transition: opacity 0.1s ease-in-out;
 }
 
-.add-job {
+.add-job,
+.add-project,
+.add-education {
   background-color: #a8e6cf;
   color: #fff;
   border: none;
@@ -172,7 +174,9 @@ li {
   left: -30px;
 }
 
-.remove-job {
+.remove-job,
+.remove-project,
+.remove-education {
   background-color: #ff8a80;
   color: #fff;
   border: none;
