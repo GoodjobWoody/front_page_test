@@ -6,8 +6,8 @@ function injectModal() {
   const modal = document.createElement("div");
   modal.id = "resumeModal";
   modal.innerHTML = `
+        <span class="close">&times;</span>
         <div class="modal-content">
-            <span class="close">&times;</span>
             <iframe id="resumeFrame" src="${chrome.runtime.getURL(
               "resume.html"
             )}" frameborder="0"></iframe>
@@ -32,17 +32,30 @@ function injectModal() {
   }
   #resumeModal .modal-content {
       width: 90%;  /* Adjust this value as needed */
-      height: 80%; /* Adjust this value as needed */
+      height: 90%; /* Adjust this value as needed */
       margin: auto;
+      margin-top: 15px;
       position: relative;
       background: white; /* Optional: to give the modal content a background */
-      overflow: auto;    /* To handle content that might overflow */
+      overflow: hidden;  /* Prevents the outer container from scrolling */
   }
   #resumeModal iframe {
       width: 100%;
       height: 100%;
       border: none;
+      overflow: auto; /* Allows the iframe content to scroll if needed */
   }
+  .close {
+    position: absolute;
+    top: 10px;  /* Adjusted value */
+    right: 10px; /* Adjusted value */
+    cursor: pointer;
+    background-color: #fff; /* White background for visibility */
+    color: #000; /* Black text for visibility */
+    padding: 5px; /* Some padding for better appearance */
+    border-radius: 50%; /* Optional: to make it circular */
+    z-index: 10001; /* Ensure it's above other elements */
+}
 `;
   document.head.appendChild(style);
 
