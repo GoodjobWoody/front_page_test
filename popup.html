@@ -8,15 +8,18 @@
   </head>
   <body>
     <div class="popup-container">
-      <h2>Resume Extension</h2>
-      <button id="reviseResumeBtn">Revise Resume</button>
+      <h2 class="popup-title">Smart Resume</h2>
+      <button id="reviseResumeBtn" class="action-button">Revise Resume</button>
       <div class="upload-section">
-        <label for="resumeUpload">Upload your resume:</label>
+        <label for="resumeUpload" class="upload-label"
+          >Upload your resume:</label
+        >
         <input type="file" id="resumeUpload" accept=".pdf, .doc, .docx" />
-        <button id="uploadButton">Upload</button>
+        <button id="uploadButton" class="action-button">Upload</button>
       </div>
     </div>
-
+    <script src="pdf.js"></script>
+    <script src="pdf.worker.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>
