@@ -27,7 +27,6 @@ function handleFileUpload() {
   const fileInput = document.getElementById("resumeUpload");
   const file = fileInput.files[0];
   if (file) {
-    // Further processing based on file type
     if (file.type === "application/pdf") {
       parsePDF(file);
     } else if (
@@ -48,7 +47,6 @@ function parsePDF(file) {
   reader.onload = function (event) {
     let typedArray = new Uint8Array(event.target.result);
     pdfjsLib.getDocument({ data: typedArray }).promise.then(function (pdf) {
-      // Extract text from the PDF
       extractTextFromPDF(pdf);
     });
   };
@@ -63,7 +61,7 @@ function extractTextFromPDF(pdf) {
   }
   Promise.all(allTextPromises).then(function (pagesText) {
     let resumeText = pagesText.join(" ");
-    // Convert this text to JSON or use as needed
+    console.log(resumeText); // Log the extracted text to the console
   });
 }
 
@@ -90,13 +88,11 @@ function parseDocx(file) {
 }
 
 function displayResult(result) {
-  let html = result.value; // The generated HTML
-  // Convert this HTML to JSON or use as needed
+  let html = result.value;
+  console.log(html); // Log the extracted HTML to the console
 }
 
 function handleError(err) {
   console.log(err);
   alert("Error parsing the document.");
 }
-
-// Additional functions for handling the parsed data, converting to JSON, and populating the editable resume area will also be added here.
