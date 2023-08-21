@@ -80,4 +80,6 @@ function populateData(resumeData) {
     document.querySelector(".highlighted-resume #reference h2").innerText =
       "References available upon request.";
   }
+
+  highlightKeywords();
 }
