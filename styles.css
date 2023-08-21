@@ -22,8 +22,8 @@ body,
   margin: 20px 0;
 }
 
-.resume-template,
-.highlighted-resume {
+.editable-resume,
+.tailored-resume {
   /* width: 8.5in; */
   width: calc(50% - 20px);
   height: 11in;
@@ -36,13 +36,13 @@ body,
   /* overflow-y: auto; */
 }
 
-.resume-template {
+.editable-resume {
   border-right: 1px solid #ccc;
   margin-right: 20px;
 }
 
-.resume-template span,
-.resume-template li {
+.editable-resume span,
+.editable-resume li {
   background-color: #e0e0e0;
   padding: 2px 4px;
   border-radius: 3px;

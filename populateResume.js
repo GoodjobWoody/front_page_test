@@ -9,20 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function populateData(resumeData) {
   // Populate Personal Information
-  document.querySelector(".highlighted-resume #name").innerText =
-    resumeData.name;
-  document.querySelector(".highlighted-resume #phone").innerText =
+  document.querySelector(".tailored-resume #name").innerText = resumeData.name;
+  document.querySelector(".tailored-resume #phone").innerText =
     resumeData.contact.phone;
-  document.querySelector(".highlighted-resume #email").innerText =
+  document.querySelector(".tailored-resume #email").innerText =
     resumeData.contact.email;
-  document.querySelector(".highlighted-resume #location").innerText =
+  document.querySelector(".tailored-resume #location").innerText =
     resumeData.contact.location;
-  document.querySelector(".highlighted-resume #linkedin").innerText =
+  document.querySelector(".tailored-resume #linkedin").innerText =
     resumeData.contact.linkedin;
 
   // Populate Highlights
   const highlightsContainer = document.querySelector(
-    ".highlighted-resume #highlights ul"
+    ".tailored-resume #highlights ul"
   );
   resumeData.highlights.forEach((highlight) => {
     const listItem = document.createElement("li");
@@ -32,7 +31,7 @@ function populateData(resumeData) {
 
   // Populate Work Experience
   const workExperienceContainer = document.querySelector(
-    ".highlighted-resume #professional-experience"
+    ".tailored-resume #professional-experience"
   );
   resumeData.workExperience.forEach((experience) => {
     const experienceDiv = document.createElement("div");
@@ -58,7 +57,7 @@ function populateData(resumeData) {
 
   // Populate Education
   const educationContainer = document.querySelector(
-    ".highlighted-resume #education"
+    ".tailored-resume #education"
   );
   resumeData.education.forEach((education) => {
     const educationDiv = document.createElement("div");
@@ -77,7 +76,7 @@ function populateData(resumeData) {
 
   // Handle References
   if (resumeData.referencesAvailable) {
-    document.querySelector(".highlighted-resume #reference h2").innerText =
+    document.querySelector(".tailored-resume #reference h2").innerText =
       "References available upon request.";
   }
 
