@@ -36,17 +36,23 @@ function populateData(resumeData) {
   );
   resumeData.workExperience.forEach((experience) => {
     const experienceDiv = document.createElement("div");
+    experienceDiv.classList.add("job");
+
+    const jobTitle = `${experience.position} at ${experience.company}`;
+    const jobLocation = `<strong>Location:</strong> ${experience.location}`;
+    const jobDuration = `<strong>Duration:</strong> ${experience.startDate} - ${experience.endDate}`;
+
+    let responsibilitiesList = experience.responsibilities
+      .map((responsibility) => `<li>${responsibility}</li>`)
+      .join("");
+
     experienceDiv.innerHTML = `
-          <h3>${experience.company} - ${experience.position}</h3>
-          <p>${experience.location} | ${experience.startDate} - ${
-      experience.endDate
-    }</p>
-          <ul>
-              ${experience.responsibilities
-                .map((responsibility) => `<li>${responsibility}</li>`)
-                .join("")}
-          </ul>
-      `;
+        <h3>${jobTitle}</h3>
+        <p>${jobLocation} | ${jobDuration}</p>
+        <ul class="achievements">
+            ${responsibilitiesList}
+        </ul>
+    `;
     workExperienceContainer.appendChild(experienceDiv);
   });
 
@@ -56,10 +62,16 @@ function populateData(resumeData) {
   );
   resumeData.education.forEach((education) => {
     const educationDiv = document.createElement("div");
+    educationDiv.classList.add("education-entry");
+
+    const educationTitle = `${education.degree} at ${education.university}`;
+    const educationLocation = `<strong>Location:</strong> ${education.location}`;
+    const educationDuration = `<strong>Duration:</strong> ${education.startDate} - ${education.endDate}`;
+
     educationDiv.innerHTML = `
-          <h3>${education.university} - ${education.degree}</h3>
-          <p>${education.location} | ${education.startDate} - ${education.endDate}</p>
-      `;
+        <h3>${educationTitle}</h3>
+        <p>${educationLocation} | ${educationDuration}</p>
+    `;
     educationContainer.appendChild(educationDiv);
   });
 
