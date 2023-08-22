@@ -1,4 +1,5 @@
 // Existing logic for opening the modal
+import { populateEditableResume } from "./populateEditableResume.js";
 
 const API_ENDPOINTS = {
   ADD_RESUME: "https://addresume-yuah7ub4ta-uc.a.run.app",
