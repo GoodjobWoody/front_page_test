@@ -25,7 +25,8 @@ body,
 .editable-resume,
 .tailored-resume {
   /* width: 8.5in; */
-  width: calc(50% - 20px);
+  /* width: calc(50% - 20px); */
+  width: 8.5in;
   height: 11in;
   padding: 0.5in;
   box-sizing: border-box;
@@ -80,6 +81,7 @@ p {
 }
 
 h2 {
+  margin-bottom: 0;
   border-bottom: 2px solid #000;
   padding: 0px;
   /* padding-bottom: 5px; */
@@ -87,6 +89,7 @@ h2 {
 }
 
 h3 {
+  margin-top: 0;
   margin-bottom: 0;
   color: #444;
   font-size: 12px;

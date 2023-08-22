@@ -108,7 +108,8 @@ function populateAndDisplayModal(resumeData) {
 window.addEventListener("message", function (event) {
   if (event.data.action === "populateEditableResumeAndDisplayModal") {
     // Handle the message here
-    // alert(event.data.data); // Outputs: "someData"
+    alert(event.data.data); // Outputs: "someData"
+    console.log(event.data.data);
     populateAndDisplayModal(event.data.data);
     // Once done, send a message to the parent
     window.parent.postMessage(
