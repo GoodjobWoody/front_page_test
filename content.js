@@ -1,9 +1,11 @@
 function injectModal() {
   // Check if modal already exists
   if (document.getElementById("resumeModal")) {
-    document.getElementById("resumeModal").style.display = "block";
+    // document.getElementById("resumeModal").style.display = "block";
     return;
   }
+
+  // Check if the modal is already injected
 
   // Create modal
   const modal = document.createElement("div");
@@ -21,7 +23,7 @@ function injectModal() {
   document.body.appendChild(modal);
 
   // Show modal
-  modal.style.display = "block";
+  modal.style.display = "none";
 
   // Close modal on 'x' click
   modal.querySelector(".close").addEventListener("click", function () {
@@ -33,5 +35,9 @@ function injectModal() {
 chrome.runtime.onMessage.addListener((message) => {
   if (message.action === "openModal") {
     injectModal();
+  } else if (message.action === "injectModal") {
+    injectModal();
+  } else if (message.action === "populateAndDisplayModal") {
+    populateAndDisplayModal(message.data);
   }
 });

@@ -1,34 +1,37 @@
-function populateEditableResume(resumeData) {
+function populateAndDisplayModal(resumeData) {
+  let iframe = document.getElementById("resumeFrame");
+  if (!iframe) console.error("Iframe not found");
+  let iframeContent = iframe.contentDocument || iframe.contentWindow.document;
   // Personal Info
-  document.querySelector(
+  iframeContent.querySelector(
     ".editable-resume #template-personal-info span:nth-child(1)"
   ).textContent = `Name: ${resumeData.name}`;
-  document.querySelector(
+  iframeContent.querySelector(
     ".editable-resume #template-personal-info span:nth-child(3)"
   ).textContent = `Phone: ${resumeData.contact.phone}`;
-  document.querySelector(
+  iframeContent.querySelector(
     ".editable-resume #template-personal-info span:nth-child(5)"
   ).textContent = `Email: ${resumeData.contact.email}`;
-  document.querySelector(
+  iframeContent.querySelector(
     ".editable-resume #template-personal-info span:nth-child(7)"
   ).textContent = `Location: ${resumeData.contact.location}`;
-  document.querySelector(
+  iframeContent.querySelector(
     ".editable-resume #template-personal-info span:nth-child(9)"
   ).textContent = `LinkedIn: ${resumeData.contact.linkedin}`;
 
   // Highlights
-  const highlightsEditableContainer = document.querySelector(
+  const highlightsEditableContainer = iframeContent.querySelector(
     ".editable-resume #template-highlights ul"
   );
   highlightsEditableContainer.innerHTML = ""; // Clear existing highlights
   resumeData.highlights.forEach((highlight) => {
-    const li = document.createElement("li");
+    const li = iframeContent.createElement("li");
     li.innerHTML = `<button class="add-highlight">+</button><span contenteditable="true">${highlight}</span><button class="remove-highlight">-</button>`;
     highlightsEditableContainer.appendChild(li);
   });
 
   // Work Experience
-  const workExperienceContainer = document.querySelector(
+  const workExperienceContainer = iframeContent.querySelector(
     ".editable-resume #template-work-experience"
   );
   workExperienceContainer.innerHTML = "<h2>Work Experience</h2>"; // Clear existing work experiences
@@ -55,7 +58,7 @@ function populateEditableResume(resumeData) {
   });
 
   // Project Experience
-  const projectExperienceContainer = document.querySelector(
+  const projectExperienceContainer = iframeContent.querySelector(
     ".editable-resume #template-project-experience"
   );
   projectExperienceContainer.innerHTML = "<h2>Project Experience</h2>"; // Clear existing project experiences
@@ -82,7 +85,7 @@ function populateEditableResume(resumeData) {
   });
 
   // Education
-  const educationContainer = document.querySelector(
+  const educationContainer = iframeContent.querySelector(
     ".editable-resume #template-education"
   );
   educationContainer.innerHTML = "<h2>Education</h2>"; // Clear existing education
@@ -95,6 +98,9 @@ function populateEditableResume(resumeData) {
         `;
     educationContainer.appendChild(div);
   });
-}
 
-export { populateEditableResume };
+  // Hide the loader and display the modal
+
+  const modal = document.getElementById("resumeModal");
+  if (modal) modal.style.display = "block";
+}

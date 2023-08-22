@@ -1,13 +1,19 @@
 // Existing logic for opening the modal
-import { populateEditableResume } from "./populateEditableResume.js";
+import { populateEditableResume } from "./populateAndDisplayModal.js";
 
 const API_ENDPOINTS = {
-  ADD_RESUME: "https://addresume-yuah7ub4ta-uc.a.run.app",
-  GET_RESUME: "https://getresume-yuah7ub4ta-uc.a.run.app",
-  CONVERT_DOC_TO_JSON: "https://convertdoctojson-yuah7ub4ta-uc.a.run.app",
+  ADD_RESUME: "https://addresume",
+  GET_RESUME: "https://getr",
+  CONVERT_DOC_TO_JSON: "https://con",
 };
 
 const CLOUD_FUNCTION_TOKEN = "abc";
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, { action: "injectModal" });
+  });
+});
 
 document
   .getElementById("reviseResumeBtn")
@@ -109,6 +115,9 @@ function handleError(err) {
 }
 
 function convertDocToJson(data) {
+  // Show loader animation
+  document.getElementById("loader").style.display = "block";
+
   fetch(API_ENDPOINTS.CONVERT_DOC_TO_JSON, {
     method: "POST",
     headers: {
@@ -120,6 +129,13 @@ function convertDocToJson(data) {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
+      // Once we have the resumeData, populate and display the modal
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {
+          action: "populateAndDisplayModal",
+          data: json,
+        });
+      });
     })
     .catch((error) => {
       console.error("Error sending data to API:", error);
