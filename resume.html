@@ -149,7 +149,18 @@
       </div>
     </div>
 
+    <div id="jdModal" style="display: none">
+      <textarea
+        id="jdTextarea"
+        placeholder="Paste the job description here..."
+      ></textarea>
+      <button id="reviseResumeBtn">Revise Resume</button>
+    </div>
+
     <button onclick="downloadPDF()">Download as PDF</button>
+    <button id="tailorResumeBtn">Tailor Resume based on JD</button>
+
+    <script src="reviseResume.js"></script>
     <script src="populateAndDisplayModal.js"></script>
     <script src="highlight.js"></script>
     <script src="html2pdf.min.js"></script>

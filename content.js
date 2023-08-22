@@ -62,5 +62,9 @@ chrome.runtime.onMessage.addListener((message) => {
         "*"
       );
     }
+  } else if (message.action === "tailorResumeBasedOnJd") {
+    alert("Tailoring resume based on JD");
+    console.log(message.data);
+    // send data to backend api
   }
 });
