@@ -1,37 +1,37 @@
 function populateAndDisplayModal(resumeData) {
-  let iframe = document.getElementById("resumeFrame");
-  if (!iframe) console.error("Iframe not found");
-  let iframeContent = iframe.contentDocument || iframe.contentWindow.document;
+  // let iframe = document.getElementById("resumeFrame");
+  // if (!iframe) console.error("Iframe not found");
+  // let document = iframe.contentDocument || iframe.contentWindow.document;
   // Personal Info
-  iframeContent.querySelector(
+  document.querySelector(
     ".editable-resume #template-personal-info span:nth-child(1)"
-  ).textContent = `Name: ${resumeData.name}`;
-  iframeContent.querySelector(
+  ).textContent = `${resumeData.name}`;
+  document.querySelector(
+    ".editable-resume #template-personal-info span:nth-child(2)"
+  ).textContent = `${resumeData.contact.phone}`;
+  document.querySelector(
     ".editable-resume #template-personal-info span:nth-child(3)"
-  ).textContent = `Phone: ${resumeData.contact.phone}`;
-  iframeContent.querySelector(
+  ).textContent = `${resumeData.contact.email}`;
+  document.querySelector(
+    ".editable-resume #template-personal-info span:nth-child(4)"
+  ).textContent = `${resumeData.contact.location}`;
+  document.querySelector(
     ".editable-resume #template-personal-info span:nth-child(5)"
-  ).textContent = `Email: ${resumeData.contact.email}`;
-  iframeContent.querySelector(
-    ".editable-resume #template-personal-info span:nth-child(7)"
-  ).textContent = `Location: ${resumeData.contact.location}`;
-  iframeContent.querySelector(
-    ".editable-resume #template-personal-info span:nth-child(9)"
   ).textContent = `LinkedIn: ${resumeData.contact.linkedin}`;
 
   // Highlights
-  const highlightsEditableContainer = iframeContent.querySelector(
+  const highlightsEditableContainer = document.querySelector(
     ".editable-resume #template-highlights ul"
   );
   highlightsEditableContainer.innerHTML = ""; // Clear existing highlights
   resumeData.highlights.forEach((highlight) => {
-    const li = iframeContent.createElement("li");
+    const li = document.createElement("li");
     li.innerHTML = `<button class="add-highlight">+</button><span contenteditable="true">${highlight}</span><button class="remove-highlight">-</button>`;
     highlightsEditableContainer.appendChild(li);
   });
 
   // Work Experience
-  const workExperienceContainer = iframeContent.querySelector(
+  const workExperienceContainer = document.querySelector(
     ".editable-resume #template-work-experience"
   );
   workExperienceContainer.innerHTML = "<h2>Work Experience</h2>"; // Clear existing work experiences
@@ -58,7 +58,7 @@ function populateAndDisplayModal(resumeData) {
   });
 
   // Project Experience
-  const projectExperienceContainer = iframeContent.querySelector(
+  const projectExperienceContainer = document.querySelector(
     ".editable-resume #template-project-experience"
   );
   projectExperienceContainer.innerHTML = "<h2>Project Experience</h2>"; // Clear existing project experiences
@@ -85,7 +85,7 @@ function populateAndDisplayModal(resumeData) {
   });
 
   // Education
-  const educationContainer = iframeContent.querySelector(
+  const educationContainer = document.querySelector(
     ".editable-resume #template-education"
   );
   educationContainer.innerHTML = "<h2>Education</h2>"; // Clear existing education
@@ -101,6 +101,21 @@ function populateAndDisplayModal(resumeData) {
 
   // Hide the loader and display the modal
 
-  const modal = document.getElementById("resumeModal");
-  if (modal) modal.style.display = "block";
+  // const modal = document.getElementById("resumeModal");
+  // if (modal) modal.style.display = "block";
 }
+
+window.addEventListener("message", function (event) {
+  if (event.data.action === "populateEditableResumeAndDisplayModal") {
+    // Handle the message here
+    // alert(event.data.data); // Outputs: "someData"
+    populateAndDisplayModal(event.data.data);
+    // Once done, send a message to the parent
+    window.parent.postMessage(
+      {
+        action: "editabelResumePopulationComplete",
+      },
+      "*"
+    );
+  }
+});
