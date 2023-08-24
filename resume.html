@@ -111,6 +111,10 @@
         </section>
 
         <!-- Add more sections (e.g., Work Experience, Education) with placeholders similarly -->
+        <div class="button-container">
+          <button onclick="downloadPDF()">Download as PDF</button>
+          <button class="tailorResumeBtn">Tailor Resume based on JD</button>
+        </div>
       </div>
 
       <!-- Right Side: Highlighted Resume -->
@@ -154,11 +158,8 @@
         id="jdTextarea"
         placeholder="Paste the job description here..."
       ></textarea>
-      <button id="reviseResumeBtn">Revise Resume</button>
+      <button class="reviseResumeBtn">Revise Resume</button>
     </div>
-
-    <button onclick="downloadPDF()">Download as PDF</button>
-    <button id="tailorResumeBtn">Tailor Resume based on JD</button>
 
     <script src="reviseResume.js"></script>
     <script src="populateAndDisplayModal.js"></script>

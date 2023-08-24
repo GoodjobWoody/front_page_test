@@ -1,10 +1,15 @@
 window.addEventListener("message", function (event) {
+  console.log(event.data);
   if (event.data.action === "editabelResumePopulationComplete") {
     // Show the resume modal
     const resumeModal = document.getElementById("resumeModal");
     if (resumeModal) {
       resumeModal.style.display = "block";
     }
+  } else if (event.data.action === "tailorResumeBasedOnJd") {
+    alert("Tailoring resume based on JD");
+    console.log(event.data.data);
+    // send data to backend api
   }
 });
 
@@ -62,9 +67,5 @@ chrome.runtime.onMessage.addListener((message) => {
         "*"
       );
     }
-  } else if (message.action === "tailorResumeBasedOnJd") {
-    alert("Tailoring resume based on JD");
-    console.log(message.data);
-    // send data to backend api
   }
 });
